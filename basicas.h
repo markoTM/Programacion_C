@@ -195,3 +195,5 @@ int elegir_opcion(char *msje, char *tablaOpciones[], int cantOpciones, char *msj
 	leer_entero_valido(msje,1,cantOpciones,msjeError,op);
 	return op;
 }
+
+holiwwi
