@@ -47,6 +47,7 @@ void mensaje(char *msje){
 	printf("%s: ",msje);
 }
 
+
 void mensaje_ok(char *msje){
 	printf("\n\tExito -> %s\n",msje);
 }
@@ -194,4 +195,27 @@ int elegir_opcion(char *msje, char *tablaOpciones[], int cantOpciones, char *msj
 	}
 	leer_entero_valido(msje,1,cantOpciones,msjeError,op);
 	return op;
+}
+
+/*====================================================================================
+	FUNCIONES DE FECHA
+=================================================================================== */
+
+bool es_anio_bisiesto(int anio){
+	if (anio % 4 == 0 && anio % 100 != 0 || anio % 400 == 0 )
+		return true;
+    else
+    	return false;
+}
+
+bool fecha_correcta(int dia, int mes, int anio){
+    int arrayDiasMes[12] = {31,29,31,30,31,30,31,31,30,31,30,31};
+    if(dia == 0 || mes == 0 || anio == 0)
+    	return false;
+    if(arrayDiasMes[mes - 1] < dia)
+    	return false;
+    if(mes == 2 && dia == 29 && !es_anio_bisiesto(anio))
+    	return false;
+
+    return true;
 }

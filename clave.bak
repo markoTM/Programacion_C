@@ -13,6 +13,12 @@
 =================================================================================== */
 
 
+#include <conio.h>
+	#include <stdio.h>
+	#include <windows.h>
+
+	//Definir ENTER
+	#define ENTER 13
 
 void leer_clave(char *titulo, int maxCaracteres, char *clave){
 	printf("%s: ",titulo);
@@ -33,3 +39,8 @@ void leer_clave(char *titulo, int maxCaracteres, char *clave){
 	clave[i] = '\0';
 }
 
+void main(){
+
+ char clave[9];
+ leer_clave("Clave",9,clave);
+}
